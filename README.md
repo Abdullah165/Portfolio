@@ -2,7 +2,7 @@
 
 Recent work.
 
-![image](https://github.com/Abdullah165/Portfolio/assets/63372032/878da164-22e1-4b57-96f1-add98b70772f)
+![image](https://github.com/Abdullah165/Portfolio/assets/63372032/8e7c32d2-d105-47a1-a3fb-8206f056e576)
 
 About 
 
