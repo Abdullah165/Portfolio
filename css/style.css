@@ -7,14 +7,16 @@
 /*Variables*/
 
 :root{
-	--main-color:#056130;
-	--blue: #0000ff;
-	--blue-dark: #18293c;
-	--orange: #ffa500;
-	--green-yellow: #cddc39;
-	--pink-light: #e2e2e2;
-	--cyan-light: #779ffe;
+	--main-color:#000000;
+	--blue: #000000;
+	--blue-dark: #000000;
+	--orange: #ffbb00;
+	--orange: #000000;
+	--green-yellow: #000000;
+	--pink-light: #e3e3e3ba;
+	--cyan-light: #fcf00a90;
 	--white: #ffffff;
+	--sky: #00F0FF;
 	--white-alpha-40: rgba(255,255,255,0.40);
 	--white-alpha-25: rgba(255,255,255,0.25);
 	--backdrop-filter-blur: blur(5px);
@@ -857,24 +859,28 @@ button{
 	font-size: 25px;
 	text-transform: capitalize;
 	margin: 20px 0 15px;
+	color: #FCEE0A;
 }
 
 .pp-body .description{
 	margin-bottom:20px ;
+	color: var(--sky);
 }
 
 .pp-body .general-info li{
 	margin-bottom: 10px;
 	font-weight: 500;
+	color: var(--sky);
 }
 
 .pp-body .general-info li span{
 	font-weight: 300;
+	color: var(--sky);
 }
 
 .pp-body .general-info li a{
 	text-transform: lowercase;
-	color: var(--main-color);
+	color: var(--white);
 }
 
 
