@@ -817,7 +817,7 @@ button{
 }
 
 .pp-content{
-	background-color: var(--white-alpha-25);
+	background-color: var(--blue);
 	padding: 30px;
 	border-radius: 30px;
 	max-width: 900px;
