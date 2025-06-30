@@ -181,24 +181,25 @@ button{
 	user-select: none;
 }
 
-.btn{
-	line-height: 1.5;
-	background-color: var(--white-alpha-25);
-	border: 1px solid var(--white-alpha-40);
-	padding: 10px 20px;
-	display: inline-block;
-	border-radius: 30px;
-	color: var(--main-color);
+.btn {
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.4); /* slightly more visible */
+    border: 1px solid rgba(0, 0, 0, 0.1);       /* soft border for contrast */
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 30px;
+    color: #007b77; /* soft but visible teal/green */
     font-weight: 500;
-	text-transform: capitalize;
-	font-family: inherit;
-	font-size: 16px;
-	cursor: pointer;
-	user-select: none;
-	position: relative;
-	overflow:hidden ;
-	vertical-align: middle;
-	transition: color 0.3s ease;
+    text-transform: capitalize;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* soft button depth */
 }
 
 .btn::before{
@@ -218,7 +219,11 @@ button{
 }
 
 .btn:hover{
-   color: var(--white);
+   /*color: var(--white);*/
+    background-color: #26b57e; /* vibrant on hover */
+    color: white;
+    box-shadow: 0 4px 16px rgba(38, 181, 126, 0.3);
+    border-color: transparent;
 }
 
 /*---Animation----*/
