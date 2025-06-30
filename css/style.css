@@ -221,7 +221,7 @@ button{
 .btn:hover{
    /*color: var(--white);*/
     background-color: #26b57e; /* vibrant on hover */
-    color: white;
+    color: red;
     box-shadow: 0 4px 16px rgba(38, 181, 126, 0.3);
     border-color: transparent;
 }
@@ -275,7 +275,7 @@ button{
 }
 
 /*--Bckground circles--*/
-.bg-circles{
+/*.bg-circles{
 	position: fixed;
 	top: 0;
 	height: 100%;
@@ -326,7 +326,7 @@ button{
 	top: 80%;
 	left: -30px;
 	opacity: 0.2;
-}
+}*/
 
 /*Page Loader*/
 .page-loader{
