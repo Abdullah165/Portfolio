@@ -220,7 +220,7 @@ button{
 
 .btn:hover{
    /*color: var(--white);*/
-    background-color: #26b57e; /* vibrant on hover */
+    background-color: #0d1117; /* vibrant on hover */
     color: white;
     box-shadow: 0 4px 16px rgba(38, 181, 126, 0.3);
     border-color: transparent;
