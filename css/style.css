@@ -903,33 +903,33 @@ button{
 }
 
 /* You might also want to adjust text colors within the popup for readability on a black background */
-.pp-header h3{
+/*.pp-header h3{
 	font-size: 25px;
 	text-transform: capitalize;
 	margin: 20px 0 15px;
-	color: #FFFFFF; /* Changed to white for better contrast on black */
+	color: #FFFFFF;
 }
 
 .pp-body .description{
 	margin-bottom:20px ;
-	color: #CCCCCC; /* Lighter color for description */
+	color: #CCCCCC;
 }
 
 .pp-body .general-info li{
 	margin-bottom: 10px;
 	font-weight: 500;
-	color: #CCCCCC; /* Lighter color for list items */
+	color: #CCCCCC; 
 }
 
 .pp-body .general-info li span{
 	font-weight: 300;
-	color: #E0E0E0; /* Slightly lighter for spans within list items */
+	color: #E0E0E0; 
 }
 
 .pp-body .general-info li a{
 	text-transform: lowercase;
-	color: #00BFFF; /* A bright color for links, e.g., Deep Sky Blue */
-}
+	color: #00BFFF; 
+}*/
 
 /*contact section*/
 
