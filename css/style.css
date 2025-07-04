@@ -41,7 +41,7 @@
 
 body {
     min-height: 100vh;
-    background: #000000; /* Changed from gradient to black */
+    background: linear-gradient(to bottom right, #e8f0ff, #f5f7ff); /* Changed from gradient to black */
     background-attachment: fixed;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
