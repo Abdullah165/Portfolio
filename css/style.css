@@ -822,7 +822,7 @@ button{
 }
 
 .pp-content{
-	background-color: var(--blue);
+	background-color: var(--black);
 	padding: 30px;
 	border-radius: 30px;
 	max-width: 900px;
