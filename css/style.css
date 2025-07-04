@@ -65,8 +65,7 @@ body::before {
     height: 100%;
     width: 100%;
     /* Subtle sky-like radial gradients */
-    background: radial-gradient(circle at 20% 30%, rgba(173, 216, 230, 0.4) 0%, transparent 60%), /* Light blue */
-                radial-gradient(circle at 80% 70%, rgba(135, 206, 250, 0.3) 0%, transparent 60%); /* Sky blue */
+    background: #000000; /* Sky blue */
     z-index: -1;
     opacity: 0.8; /* Adjust opacity if you want these gradients to be more or less prominent */
 }
