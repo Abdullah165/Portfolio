@@ -41,19 +41,20 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #e8f0ff, #f5f7ff); /* Changed from gradient to black */
+    /* Sky-like gradient for the main background */
+    background: linear-gradient(to bottom right, #a8dadc, #f5f7ff); /* Light blue to very light blue/white */
     background-attachment: fixed;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    color: #1f2d3d; /* Consider changing this color for better contrast on black */
+    color: #1f2d3d; /* Text color for the main page, keep it dark for contrast */
     line-height: 1.5;
     overflow-x: hidden;
     padding: 35px 15px;
 }
 
 body.hide-scrolling{
-    overflow-y: hidden;
+	overflow-y: hidden;
 }
 
 body::before {
@@ -63,9 +64,11 @@ body::before {
     top: 0;
     height: 100%;
     width: 100%;
-    background: #000000; /* Changed from radial gradient to black */
+    /* Subtle sky-like radial gradients */
+    background: radial-gradient(circle at 20% 30%, rgba(173, 216, 230, 0.4) 0%, transparent 60%), /* Light blue */
+                radial-gradient(circle at 80% 70%, rgba(135, 206, 250, 0.3) 0%, transparent 60%); /* Sky blue */
     z-index: -1;
-    opacity: 1; /* Changed opacity to 1 for solid black from pseudo-element */
+    opacity: 0.8; /* Adjust opacity if you want these gradients to be more or less prominent */
 }
 
 a{
