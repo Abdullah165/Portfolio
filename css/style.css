@@ -772,18 +772,25 @@ button{
 	margin: 0 15px 30px;
 }
 
-.portfolio-item-thumbnail{ 
-	padding-bottom: 10px;
-	padding-top: 10px;
-	background-color: var(--white-alpha-25);
-	border: 1px solid var(--white-alpha-40);
-    border-radius: 10px;
+/* 1. Set a fixed size and background for the image container */
+.portfolio-item-thumbnail {
+    width: 100%;
+    height: 220px; /* Adjust this height to whatever looks best on your site */
+    background-color: #ffffff; /* Sets the default background for empty spaces */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Matches the rounded corners from your screenshot */
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
-.portfolio-item-thumbnail img{
-	width: 100%;
-	border-radius: 10px;
-    margin-left: 40px;
+/* 2. Make the image fit perfectly inside the container */
+.portfolio-item-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps original aspect ratio and fills empty space with background */
+    /* Use 'object-fit: cover;' instead if you want the image to fill the whole box by cropping the edges */
 }
 
 .portfolio-item h3{
