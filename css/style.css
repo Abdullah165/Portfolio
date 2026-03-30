@@ -777,7 +777,7 @@ button{
     height: 180px; /* Forces all containers to be the same height */
     
     /* This sets the background to white, but with 30% opacity (lower alpha) */
-    background-color: rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.2); 
     
     display: flex;
     align-items: center;
