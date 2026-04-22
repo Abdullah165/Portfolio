@@ -1,1146 +1,517 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)file:///C:/Users/Lenovo/Downloads/index_2.html#about -->
-<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+  <title> Abdullah </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/Website Icon.png" type="image/x-icon">
+  
+  <style>
+    .general-info ul li a {
+        color: #00d2ff; /* Bright cyan color to make links pop */
+        text-decoration: underline; /* Makes it obvious it's a link */
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    .general-info ul li a:hover {
+        color: #ff0055; /* Changes to a pink/red when hovered over */
+        text-decoration: none;
+    }
+  </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Abdelati — Unity Game Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./index_files/css2" rel="stylesheet">
-<style>
-/* ══════════════════════════════════════════
-   COLOR THEORY — Split-Complementary Scheme
-   Primary:  Electric Cobalt  #1d4ed8  (tech, precision, trust)
-   Accent:   Ember Orange     #ea580c  (energy, action, fire)
-   Third:    Forest Teal      #0d9488  (VR, creativity, calm)
-   These three sit at ~120° intervals on the color wheel.
-   Light bg: Warm Cream  #f8f7f4  — not pure white, feels premium
-   Dark bg:  Indigo Black #141520  — depth without eye strain
-   ══════════════════════════════════════════ */
-
-:root {
-  --bg:        #f8f7f4;
-  --bg2:       #ffffff;
-  --bg3:       #f0ede8;
-  --border:    #e4dfd7;
-  --border2:   #d0cac1;
-  --text:      #1c1917;
-  --text2:     #44403c;
-  --muted:     #78716c;
-  --primary:   #1d4ed8;
-  --primary-l: #dbeafe;
-  --accent:    #ea580c;
-  --accent-l:  #fff7ed;
-  --teal:      #0d9488;
-  --teal-l:    #ccfbf1;
-  --shadow:    0 1px 3px rgba(28,25,23,.08),0 4px 16px rgba(28,25,23,.06);
-  --shadow-lg: 0 8px 32px rgba(28,25,23,.12),0 2px 8px rgba(28,25,23,.08);
-  --tr:        0.2s cubic-bezier(.4,0,.2,1);
-}
-
-[data-theme="dark"] {
-  --bg:        #0c0c10;
-  --bg2:       #131318;
-  --bg3:       #1c1c24;
-  --border:    #27272f;
-  --border2:   #34343e;
-  --text:      #eaedf5;
-  --text2:     #c4c8dc;
-  --muted:     #80849c;
-  --primary:   #7ab8ff;
-  --primary-l: #101828;
-  --accent:    #fb923c;
-  --accent-l:  #1e1005;
-  --teal:      #34d4c0;
-  --teal-l:    #081a17;
-  --shadow:    0 1px 3px rgba(0,0,0,.6),0 4px 16px rgba(0,0,0,.45);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,.7),0 2px 8px rgba(0,0,0,.55);
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--text);
-  font-family:'Nunito',sans-serif;font-weight:400;line-height:1.6;
-  transition:background var(--tr),color var(--tr);
-  overflow-x:hidden;
-}
-img{max-width:100%;display:block;}
-a{text-decoration:none;color:inherit;}
-ul{list-style:none;}
-button{font-family:inherit;cursor:pointer;border:none;background:none;}
-
-/* LOADER */
-#loader{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:16px;
-  transition:opacity .4s ease;
-}
-#loader.done{opacity:0;pointer-events:none;}
-.ld-logo{
-  font-family:'Playfair Display',serif;font-weight:800;font-size:26px;
-  color:var(--primary);letter-spacing:1px;
-}
-.ld-logo em{color:var(--accent);font-style:normal;}
-.ld-bar{width:160px;height:2px;background:var(--border);border-radius:2px;overflow:hidden;}
-.ld-fill{height:100%;width:0;background:linear-gradient(to right,var(--primary),var(--accent));animation:lfill 1.1s cubic-bezier(.4,0,.2,1) forwards;}
-@keyframes lfill{to{width:100%;}}
-
-/* NAV */
-nav{
-  position:sticky;top:0;z-index:200;
-  background:var(--bg);border-bottom:1px solid var(--border);
-  transition:background var(--tr),border-color var(--tr);
-}
-.nav-inner{
-  max-width:1280px;margin:0 auto;padding:0 32px;
-  height:58px;display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{
-  font-family:'Playfair Display',serif;font-weight:800;font-size:17px;
-  letter-spacing:.3px;color:var(--text);display:flex;align-items:center;gap:0;
-}
-.nav-logo .dot{color:var(--accent);}
-.nav-role{
-  font-family:'DM Mono',monospace;font-weight:300;font-size:10px;
-  color:var(--muted);letter-spacing:1.5px;
-  padding:3px 8px;border:1px solid var(--border);
-  border-radius:4px;margin-left:10px;
-}
-@media(max-width:560px){.nav-role{display:none;}}
-.nav-right{display:flex;align-items:center;gap:6px;}
-.nav-a{
-  font-family:'DM Mono',monospace;font-size:11px;
-  letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--muted);padding:7px 13px;border-radius:6px;
-  transition:color var(--tr),background var(--tr);
-}
-.nav-a:hover{color:var(--primary);background:var(--primary-l);}
-.nav-a.cv{
-  border:1px solid var(--border);color:var(--text2);background:var(--bg2);
-}
-.nav-a.cv:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-l);}
-.theme-btn{
-  width:38px;height:38px;border-radius:8px;
-  border:1px solid var(--border);background:var(--bg2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:var(--text2);
-  transition:all var(--tr);
-}
-.theme-btn:hover{border-color:var(--primary);}
-
-/* MAIN */
-.page{max-width:1280px;margin:0 auto;padding:0 32px 80px;}
-@media(max-width:600px){.page{padding:0 16px 60px;}}
-
-/* PORTFOLIO TOP */
-.port-head{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;padding:36px 0 22px;
-}
-.port-title{
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:clamp(22px,4vw,34px);
-  color:var(--text);letter-spacing:-.5px;
-}
-.port-title em{color:var(--accent);font-style:normal;}
-.port-count{
-  font-family:'DM Mono',monospace;font-size:11px;
-  letter-spacing:2px;color:var(--muted);
-}
-
-/* FILTERS */
-.filters{
-  display:flex;gap:7px;flex-wrap:wrap;
-  padding-bottom:24px;
-  border-bottom:1px solid var(--border);
-  margin-bottom:28px;
-}
-.f-btn{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:2px;text-transform:uppercase;
-  padding:6px 14px;border-radius:6px;
-  border:1px solid var(--border);
-  background:var(--bg2);color:var(--muted);
-  transition:all var(--tr);
-}
-.f-btn:hover{border-color:var(--border2);color:var(--text2);}
-.f-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
-.f-btn[data-f="vr"].active{background:var(--teal);border-color:var(--teal);}
-.f-btn[data-f="multi"].active{background:var(--accent);border-color:var(--accent);}
-.f-btn[data-f="cpp"].active{background:#7c3aed;border-color:#7c3aed;}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:14px;}}
-@media(max-width:520px){.grid{grid-template-columns:1fr;gap:12px;}}
-
-/* CARD */
-.card{
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:12px;overflow:hidden;cursor:pointer;
-  display:flex;flex-direction:column;
-  transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
-}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--border2);}
-.card-img-box{
-  position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg3);
-}
-.card-img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .55s cubic-bezier(.4,0,.2,1);
-}
-.card:hover .card-img{transform:scale(1.07);}
-.cat-pill{
-  position:absolute;top:10px;left:10px;
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:2px;text-transform:uppercase;
-  padding:3px 9px;border-radius:4px;
-  backdrop-filter:blur(8px);font-weight:400;
-}
-.p-vr   {background:rgba(13,148,136,.88);color:#fff;}
-.p-multi{background:rgba(234,88,12,.88);color:#fff;}
-.p-cpp  {background:rgba(124,58,237,.88);color:#fff;}
-.p-pc   {background:rgba(29,78,216,.88);color:#fff;}
-
-/* Hover overlay on image */
-.card-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(14,14,24,.97) 0%,rgba(14,14,24,.55) 55%,transparent 100%);
-  opacity:0;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:18px;transition:opacity var(--tr);
-}
-[data-theme="light"] .card-ov{
-  background:linear-gradient(to top,rgba(22,17,10,.97) 0%,rgba(22,17,10,.5) 55%,transparent 100%);
-}
-.card:hover .card-ov{opacity:1;}
-.ov-title{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:#fff;margin-bottom:5px;}
-.ov-desc{
-  font-size:11.5px;line-height:1.55;color:rgba(255,255,255,.8);margin-bottom:12px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-}
-.ov-links{display:flex;gap:8px;flex-wrap:wrap;}
-.ov-link{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;
-  color:#fff;padding:4px 10px;border-radius:4px;
-  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);
-  backdrop-filter:blur(4px);transition:background .15s;
-}
-.ov-link:hover{background:rgba(255,255,255,.25);}
-
-/* Card bottom bar */
-.card-foot{
-  padding:13px 16px;
-  display:flex;align-items:center;justify-content:space-between;gap:8px;
-}
-.card-name{font-family:'Playfair Display',serif;font-weight:600;font-size:14px;color:var(--text);}
-.card-sub{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.3px;}
-.card-arr{
-  flex-shrink:0;width:28px;height:28px;border-radius:6px;
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:13px;
-  transition:all var(--tr);
-}
-.card:hover .card-arr{background:var(--primary);border-color:var(--primary);color:#fff;transform:rotate(-45deg);}
-
-/* MODAL */
-.modal-bg{
-  position:fixed;inset:0;z-index:500;
-  background:rgba(14,14,24,.72);
-  backdrop-filter:blur(12px);
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;
-  opacity:0;pointer-events:none;transition:opacity .25s ease;
-}
-[data-theme="light"] .modal-bg{background:rgba(22,17,10,.55);}
-.modal-bg.open{opacity:1;pointer-events:all;}
-.modal{
-  max-width:800px;width:100%;
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:16px;overflow:hidden;
-  max-height:90vh;overflow-y:auto;
-  box-shadow:var(--shadow-lg);
-  transform:scale(.93) translateY(14px);
-  transition:transform .3s cubic-bezier(.4,0,.2,1);
-  position:relative;
-}
-.modal-bg.open .modal{transform:scale(1) translateY(0);}
-.modal-img{width:100%;height:260px;object-fit:cover;}
-.modal-x{
-  position:absolute;top:14px;right:14px;
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(14,14,24,.65);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.2);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:15px;cursor:pointer;transition:background .2s;
-}
-.modal-x:hover{background:var(--accent);}
-.modal-body{padding:28px 32px 36px;}
-@media(max-width:520px){.modal-body{padding:20px 18px 28px;}}
-.modal-cats{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;}
-.modal-badge{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:2px;text-transform:uppercase;
-  padding:3px 9px;border-radius:4px;
-  background:var(--bg3);border:1px solid var(--border);color:var(--muted);
-}
-.modal-badge.primary{background:var(--primary-l);color:var(--primary);border-color:var(--primary-l);}
-.modal-title{
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:clamp(24px,4vw,36px);
-  color:var(--text);letter-spacing:-.5px;
-  margin-bottom:12px;line-height:1.05;
-}
-.modal-desc{font-size:15px;line-height:1.8;color:var(--text2);margin-bottom:24px;}
-.modal-hr{height:1px;background:var(--border);margin-bottom:20px;}
-.meta-head{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:12px;
-}
-.meta-rows{display:flex;flex-direction:column;gap:9px;}
-.meta-row{display:flex;gap:10px;align-items:baseline;font-size:14px;}
-.meta-k{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);min-width:100px;flex-shrink:0;letter-spacing:.5px;}
-.meta-v{color:var(--text2);}
-.meta-lnk{
-  color:var(--primary);display:inline-flex;align-items:center;gap:4px;
-  font-size:13px;transition:color .15s;
-}
-.meta-lnk::after{content:'↗';font-size:10px;}
-.meta-lnk:hover{color:var(--accent);}
-
-/* DIVIDER between sections */
-.sec-div{
-  height:1px;
-  background:linear-gradient(to right,transparent,var(--border),transparent);
-  margin:60px 0 0;
-}
-
-/* ABOUT */
-#about{padding-top:56px;}
-.about-lbl{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:3px;text-transform:uppercase;
-  color:var(--primary);margin-bottom:6px;
-}
-.about-lbl::before{content:'';width:24px;height:1px;background:var(--primary);}
-.about-h{
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:clamp(28px,5vw,48px);
-  color:var(--text);letter-spacing:-1px;
-  margin-bottom:44px;line-height:1;
-}
-.about-h em{color:var(--accent);font-style:normal;}
-.about-grid{
-  display:grid;grid-template-columns:320px 1fr;
-  gap:56px;align-items:start;
-}
-@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px;}}
-
-/* Profile card */
-.profile-card{
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
-}
-.pimg{
-  width:100%;aspect-ratio:4/5;
-  object-fit:cover;object-position:top;
-  background:var(--bg3);
-}
-.pinfo{padding:18px 22px;}
-.pname{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:var(--text);margin-bottom:3px;}
-.ptitle{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:14px;}
-.pbadge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;
-  background:var(--accent-l);color:var(--accent);
-  border:1px solid var(--accent);padding:4px 9px;border-radius:4px;margin-bottom:18px;
-}
-.pbadge::before{
-  content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);
-  animation:pdot 1.6s ease-in-out infinite;
-}
-@keyframes pdot{0%,100%{opacity:1;}50%{opacity:.3;}}
-.plinks{display:flex;gap:7px;}
-.plnk{
-  flex:1;text-align:center;
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:1.5px;text-transform:uppercase;
-  padding:8px 4px;border-radius:6px;
-  border:1px solid var(--border);color:var(--text2);background:var(--bg3);
-  transition:all var(--tr);
-}
-.plnk:hover{background:var(--primary);border-color:var(--primary);color:#fff;}
-.stat-strip{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:16px;
-}
-.stat-cell{background:var(--bg2);padding:16px 10px;text-align:center;}
-.snum{
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:26px;color:var(--primary);line-height:1;
-}
-.slbl{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);margin-top:3px;
-}
-
-/* About right text */
-.abio{font-size:15px;line-height:1.85;color:var(--text2);margin-bottom:28px;}
-.abio strong{color:var(--text);font-weight:600;}
-.sk-lbl{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:12px;
-}
-.sk-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px;}
-.sk-tag{
-  font-family:'DM Mono',monospace;font-size:10px;
-  padding:5px 12px;border-radius:5px;
-  border:1px solid var(--border);color:var(--text2);background:var(--bg2);
-  transition:all var(--tr);cursor:default;letter-spacing:.3px;
-}
-.sk-tag:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-l);transform:translateY(-2px);}
-
-.info-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:520px){.info-2col{grid-template-columns:1fr;}}
-.iblock{
-  background:var(--bg2);border:1px solid var(--border);
-  border-radius:10px;padding:18px 20px;
-}
-.iblock-title{
-  font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:3px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:14px;
-}
-.tl-item{display:flex;gap:12px;margin-bottom:14px;}
-.tl-item:last-child{margin-bottom:0;}
-.tldot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--primary);flex-shrink:0;margin-top:6px;
-}
-.tl-date{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);margin-bottom:2px;}
-.tl-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.3;}
-.tl-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:28px 32px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:14px;
-  max-width:1280px;margin:0 auto;
-}
-.flogo{font-family:'Playfair Display',serif;font-weight:700;font-size:14px;color:var(--text);}
-.flogo em{color:var(--accent);font-style:normal;}
-.flinks{display:flex;gap:16px;}
-.flnk{
-  font-family:'DM Mono',monospace;font-size:10px;
-  letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--muted);transition:color var(--tr);
-}
-.flnk:hover{color:var(--primary);}
-.fcopy{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.5px;}
-
-/* FADE-UP ENTRIES */
-@keyframes fadeup{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-.fu{opacity:0;animation:fadeup .55s ease forwards;}
-.d1{animation-delay:.05s;}.d2{animation-delay:.15s;}.d3{animation-delay:.25s;}
-</style>
 </head>
 <body>
 
-
-
-<nav>
-  <div class="nav-inner">
-    <a href="file:///C:/Users/Lenovo/Downloads/index_2.html#" class="nav-logo">
-      Abdullah<span class="dot">.</span>
-      <span class="nav-role">Unity Dev</span>
-    </a>
-    <div class="nav-right">
-      <a href="file:///C:/Users/Lenovo/Downloads/index_2.html#about" class="nav-a">About</a>
-      <a href="file:///C:/Users/Lenovo/Downloads/Abdullah_Abdelati_Unity_Game_Developer.pdf" target="_blank" class="nav-a cv">Resume ↗</a>
-      <button class="theme-btn" id="themeBtn" title="Toggle theme">🌙</button>
-    </div>
-  </div>
-</nav>
-
-<main class="page">
-
-  <!-- PORTFOLIO — first thing visible -->
-  <div class="port-head fu d1">
-    <div>
-      <h1 class="port-title">Recent <em>Work</em></h1>
-    </div>
-    <div class="port-count" id="countLbl">12 Projects</div>
-  </div>
-
-  <div class="filters fu d2" id="filterRow">
-    <button class="f-btn active" data-f="all">All</button>
-    <button class="f-btn" data-f="vr">VR · AR</button>
-    <button class="f-btn" data-f="multi">Multiplayer</button>
-    <button class="f-btn" data-f="cpp">C++</button>
-    <button class="f-btn" data-f="pc">Mobile · PC</button>
-  </div>
-
-  <div class="grid fu d3" id="grid">
-    <div class="card" onclick="openM(1)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/VR%20Antomy.png" alt="VR Anatomy Lab" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-vr">VR · Education</span>
-        <div class="card-ov">
-          <div class="ov-title">VR Anatomy Lab</div>
-          <div class="ov-desc">Interactive VR educational app where students inspect 3D organ models, read medical info panels, and take quizzes — all inside an immersive VR environment. Built with Unity XRI.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/VR-Anatomy-Lab" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a><a class="ov-link" href="https://drive.google.com/file/d/1DYBAZR3VQtKtrh_n5LHxdZUKWXnlY33g/view?usp=sharing" target="_blank" onclick="event.stopPropagation()">↗ Watch Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">VR Anatomy Lab</div>
-          <div class="card-sub">Unity · XR Interaction Toolkit</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(2)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/ScaryTeleportationVR.png" alt="Scary Teleportation VR" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-vr">VR · Horror</span>
-        <div class="card-ov">
-          <div class="ov-title">Scary Teleportation VR</div>
-          <div class="ov-desc">Immersive VR horror experience with custom teleportation mechanics and physics-based interactions. Explores presence, player comfort thresholds, and VR locomotion design.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7423027637339705344/" target="_blank" onclick="event.stopPropagation()">↗ LinkedIn Showcase</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Scary Teleportation VR</div>
-          <div class="card-sub">Unity · UnityXR · C#</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(3)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Upper%20Egypt%20Derby%20Thumbnail4.png" alt="Upper Egypt Derby" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">PC · In Dev</span>
-        <div class="card-ov">
-          <div class="ov-title">Upper Egypt Derby</div>
-          <div class="ov-desc">Horse racing with South Egyptian flair 🐎 — ongoing passion project with public devlogs covering game feel, animation state machines, AI opponents, and procedural track logic.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://www.youtube.com/watch?v=Jh4v2Qe-yz4&amp;list=PLQH0vQCPtkkh1mT8I1eMEnFPIOeJk5Lb_" target="_blank" onclick="event.stopPropagation()">↗ Devlog (Arabic)</a><a class="ov-link" href="https://www.youtube.com/watch?v=VPEZZjM8M0Q&amp;list=PLYeep8TZnQu86nzKGuo64CK-KCZwzvBau" target="_blank" onclick="event.stopPropagation()">↗ Devlog (English)</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Upper Egypt Derby</div>
-          <div class="card-sub">Unity · C# · Blender</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(4)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Asteroids.png" alt="Asteroids — Photon Quantum" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-multi">Multiplayer · Deterministic</span>
-        <div class="card-ov">
-          <div class="ov-title">Asteroids — Photon Quantum</div>
-          <div class="ov-desc">Classic Asteroids reimagined as multiplayer using Photon Quantum's deterministic lockstep simulation. No lag compensation required — physics perfectly synchronized across all clients.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/quantum-asteroids" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Asteroids — Photon Quantum</div>
-          <div class="card-sub">Unity · Photon Quantum</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(5)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Racing_Game.png" alt="Racing — Photon Fusion" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-multi">Multiplayer · Racing</span>
-        <div class="card-ov">
-          <div class="ov-title">Racing — Photon Fusion</div>
-          <div class="ov-desc">Online multiplayer racing using Photon Fusion. Demonstrates client-side prediction and server reconciliation for smooth, responsive racing feel over real network conditions.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Velocity-Surge-Racing" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Racing — Photon Fusion</div>
-          <div class="card-sub">Unity · Photon Fusion</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(6)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/PixelHighway.png" alt="Pixel Highway" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-cpp">C++ · Low-Level</span>
-        <div class="card-ov">
-          <div class="ov-title">Pixel Highway</div>
-          <div class="ov-desc">Endless runner in pure C++ with Raylib — built to study rendering loops, object pooling, and collision without engine abstraction. One crash, it's game over.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Pixel-Highway" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a><a class="ov-link" href="https://abdullah026.itch.io/pixel-highway" target="_blank" onclick="event.stopPropagation()">↗ Play on Itch.io</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Pixel Highway</div>
-          <div class="card-sub">C++ · Raylib</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(7)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/AR-PACMAN.png" alt="AR PACMAN" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-vr">AR · Mobile</span>
-        <div class="card-ov">
-          <div class="ov-title">AR PACMAN</div>
-          <div class="ov-desc">Pac-Man in augmented reality using Unity AR Foundation. Full maze spawns on any real-world flat surface — plane detection, occlusion, and classic Pac-Man AI all working in AR.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/AR_PACMAN" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">AR PACMAN</div>
-          <div class="card-sub">Unity · AR Foundation</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(8)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Crazy_Fast.png" alt="Velocity Surge" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">PC · Racing</span>
-        <div class="card-ov">
-          <div class="ov-title">Velocity Surge</div>
-          <div class="ov-desc">Adrenaline-fueled single-player racing — the architecture foundation for the Photon Fusion multiplayer variant. Custom vehicle physics, camera rig, and modular track system.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Velocity-Surge" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Velocity Surge</div>
-          <div class="card-sub">Unity · Blender</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(9)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Bricke%20Breaker.png" alt="Brick Breaker" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">PC · Patterns</span>
-        <div class="card-ov">
-          <div class="ov-title">Brick Breaker</div>
-          <div class="ov-desc">Classic Brick Breaker as an Observer Pattern study — fully decoupled event-driven architecture. Ball, paddle, bricks, score, and UI communicate exclusively through events.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Brick-Breaker" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Brick Breaker</div>
-          <div class="card-sub">Unity · C#</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(10)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Fruit%20Ninja.png" alt="Fruit Ninja" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">Mobile · Architecture</span>
-        <div class="card-ov">
-          <div class="ov-title">Fruit Ninja</div>
-          <div class="ov-desc">Fruit Ninja clone demonstrating Interface-based architecture. All game objects communicate exclusively through events and interfaces — zero direct component coupling.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Fruit-Ninja" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Fruit Ninja</div>
-          <div class="card-sub">Unity · C# · Photoshop</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(11)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Serpent%20Day.png" alt="Serpent Day" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">Mobile · Gameplay</span>
-        <div class="card-ov">
-          <div class="ov-title">Serpent Day</div>
-          <div class="ov-desc">Snake-platformer hybrid where Mr. Snake jumps to clear bugs and rotten leaves. Focused on tight game feel, responsive controls, and satisfying physics response.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Serpent-Day" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Serpent Day</div>
-          <div class="card-sub">Unity · C#</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  
-    <div class="card" onclick="openM(12)" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="card-img-box" style="min-height: 160px;">
-        <img class="card-img" src="file:///C:/Users/Lenovo/Downloads/img/portfolio/Dragons.jpg" alt="Dragons" loading="lazy" onerror="this.parentElement.style.minHeight=&#39;160px&#39;">
-        <span class="cat-pill p-pc">PC · Story</span>
-        <div class="card-ov">
-          <div class="ov-title">Dragons</div>
-          <div class="ov-desc">A small blue dragon on a mission to eliminate evil dragons — combat system, health management, scene-based progression, and a simple UI flow.</div>
-          <div class="ov-links">
-            <a class="ov-link" href="https://github.com/Abdullah165/Dragons" target="_blank" onclick="event.stopPropagation()">↗ GitHub</a><a class="ov-link" href="https://simmer.io/@AbdullahD/dragon" target="_blank" onclick="event.stopPropagation()">↗ Play on Simmer.io</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">Dragons</div>
-          <div class="card-sub">Unity · C#</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sec-div"></div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="about-lbl">Profile</div>
-    <h2 class="about-h">About <em>Me</em></h2>
-    <div class="about-grid">
-
-      <!-- Left -->
-      <div>
-        <div class="profile-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-          <img src="file:///C:/Users/Lenovo/Downloads/img/About%20image.png" alt="Abdullah" class="pimg" onerror="this.style.background=&#39;var(--bg3)&#39;;this.style.minHeight=&#39;220px&#39;" style="background: var(--bg3); min-height: 220px;">
-          <div class="pinfo">
-            <div class="pname">Abdullah Abdelati</div>
-            <div class="ptitle">Unity Game Developer</div>
-            <div class="pbadge">Open to Work</div>
-            <div class="plinks">
-              <a href="https://github.com/Abdullah165" target="_blank" class="plnk">GitHub</a>
-              <a href="https://linkedin.com/" target="_blank" class="plnk">LinkedIn</a>
-              <a href="file:///C:/Users/Lenovo/Downloads/Abdullah_Abdelati_Unity_Game_Developer.pdf" target="_blank" class="plnk">CV</a>
-            </div>
-          </div>
-        </div>
-        <div class="stat-strip" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-          <div class="stat-cell"><div class="snum">3+</div><div class="slbl">Years</div></div>
-          <div class="stat-cell"><div class="snum">15+</div><div class="slbl">Projects</div></div>
-          <div class="stat-cell"><div class="snum">4</div><div class="slbl">Platforms</div></div>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div>
-        <p class="abio">
-          Result-oriented Unity Gameplay Programmer with <strong>3+ years</strong> of specialized experience in gameplay
-          architecture, <strong>multiplayer networking</strong> (Photon Quantum, Fusion, FishNet), and <strong>VR/AR</strong> development.
-          Deeply focused on performance optimization and low-level engine mechanics — I leverage the Unity Profiler, DOTS,
-          and build personal projects in <strong>C++ with Raylib</strong> to explore engine internals.
-        </p>
-        <p class="abio">
-          I write technical articles on <strong>Medium</strong> (Addressables, CI/CD, DI, Assembly Definitions)
-          and run public devlogs for my horse-racing game <em>Upper Egypt Derby</em>.
-          Currently targeting <strong>senior Unity roles at European studios</strong>.
-        </p>
-
-        <div class="sk-lbl">Technical Stack</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Unity Engine</span>
-          <span class="sk-tag">C#</span>
-          <span class="sk-tag">C++</span>
-          <span class="sk-tag">Photon Quantum</span>
-          <span class="sk-tag">Photon Fusion</span>
-          <span class="sk-tag">FishNet</span>
-          <span class="sk-tag">XR Interaction Toolkit</span>
-          <span class="sk-tag">Reflex DI</span>
-          <span class="sk-tag">DOTS / ECS</span>
-          <span class="sk-tag">Unity Profiler</span>
-          <span class="sk-tag">Addressables</span>
-          <span class="sk-tag">CI/CD</span>
-          <span class="sk-tag">Git</span>
-          <span class="sk-tag">MVC / MVP</span>
-          <span class="sk-tag">Observer Pattern</span>
-          <span class="sk-tag">Raylib</span>
-        </div>
-
-        <div class="info-2col">
-          <div class="iblock" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-            <div class="iblock-title">Experience</div>
-            <div class="tl-item">
-              <div class="tldot"></div>
-              <div>
-                <div class="tl-date">Feb 2025 — Present</div>
-                <div class="tl-name">Unity Game Programmer</div>
-                <div class="tl-sub">ExoMaz · Full-Time</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tldot" style="background:var(--accent)"></div>
-              <div>
-                <div class="tl-date">Jul 2024 — Aug 2025</div>
-                <div class="tl-name">Freelance Unity Developer</div>
-                <div class="tl-sub">FunFur Project · Part-Time</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tldot" style="background:var(--teal)"></div>
-              <div>
-                <div class="tl-date">May — Jul 2024</div>
-                <div class="tl-name">Unity Game Programmer</div>
-                <div class="tl-sub">Golden Eagle Tech · Part-Time</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tldot" style="background:var(--muted)"></div>
-              <div>
-                <div class="tl-date">Jan 2023 — May 2024</div>
-                <div class="tl-name">Freelance Unity Developer</div>
-                <div class="tl-sub">Upwork · International Clients</div>
-              </div>
-            </div>
-          </div>
-          <div class="iblock" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-            <div class="iblock-title">Education &amp; Content</div>
-            <div class="tl-item">
-              <div class="tldot"></div>
-              <div>
-                <div class="tl-date">2017 — 2021</div>
-                <div class="tl-name">B.Sc. Software Engineering</div>
-                <div class="tl-sub">Assiut University · GPA 2.75 (B−)</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tldot" style="background:var(--accent)"></div>
-              <div>
-                <div class="tl-date">Ongoing</div>
-                <div class="tl-name">Technical Articles — Medium</div>
-                <div class="tl-sub">DI, CI/CD, Addressables, Asm Defs</div>
-              </div>
-            </div>
-            <div class="tl-item">
-              <div class="tldot" style="background:var(--teal)"></div>
-              <div>
-                <div class="tl-date">Ongoing</div>
-                <div class="tl-name">Upper Egypt Derby Devlogs</div>
-                <div class="tl-sub">YouTube · Arabic &amp; English</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="flogo">Abdullah<em>.</em></div>
-  <div class="flinks">
-    <a href="https://github.com/Abdullah165" target="_blank" class="flnk">GitHub</a>
-    <a href="https://medium.com/" target="_blank" class="flnk">Medium</a>
-    <a href="https://linkedin.com/" target="_blank" class="flnk">LinkedIn</a>
-  </div>
-  <div class="fcopy">© 2025 Abdullah Abdelati</div>
-</footer>
-
-<!-- MODAL -->
-<div class="modal-bg" id="modalBg">
-  <div class="modal" id="modal">
-    <button class="modal-x" id="modalX">✕</button>
-    <img src="file:///C:/Users/Lenovo/Downloads/index_2.html" alt="" class="modal-img" id="mImg">
-    <div class="modal-body">
-      <div class="modal-cats" id="mCats"></div>
-      <h3 class="modal-title" id="mTitle"></h3>
-      <p class="modal-desc" id="mDesc"></p>
-      <div class="modal-hr"></div>
-      <div class="meta-head">Project Details</div>
-      <div class="meta-rows" id="mMeta"></div>
-    </div>
-  </div>
+<div class="page-loader">
+	<div></div>
+	<div></div>
+	<div></div>
 </div>
 
-<script>
-const projects = [
-  {
-    id:1,f:'vr',cat:'VR · Education',pc:'p-vr',
-    title:'VR Anatomy Lab',
-    img:'img/portfolio/VR Antomy.png',
-    tech:'Unity · XR Interaction Toolkit',
-    desc:'Interactive VR educational app where students inspect 3D organ models, read medical info panels, and take quizzes — all inside an immersive VR environment. Built with Unity XRI.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/VR-Anatomy-Lab'},
-      {l:'Watch Demo',u:'https://drive.google.com/file/d/1DYBAZR3VQtKtrh_n5LHxdZUKWXnlY33g/view?usp=sharing'}
-    ]
-  },
-  {
-    id:2,f:'vr',cat:'VR · Horror',pc:'p-vr',
-    title:'Scary Teleportation VR',
-    img:'img/portfolio/ScaryTeleportationVR.png',
-    tech:'Unity · UnityXR · C#',
-    desc:'Immersive VR horror experience with custom teleportation mechanics and physics-based interactions. Explores presence, player comfort thresholds, and VR locomotion design.',
-    links:[
-      {l:'LinkedIn Showcase',u:'https://www.linkedin.com/feed/update/urn:li:activity:7423027637339705344/'}
-    ]
-  },
-  {
-    id:3,f:'pc',cat:'PC · In Dev',pc:'p-pc',
-    title:'Upper Egypt Derby',
-    img:'img/portfolio/Upper Egypt Derby Thumbnail4.png',
-    tech:'Unity · C# · Blender',
-    desc:'Horse racing with South Egyptian flair 🐎 — ongoing passion project with public devlogs covering game feel, animation state machines, AI opponents, and procedural track logic.',
-    links:[
-      {l:'Devlog (Arabic)',u:'https://www.youtube.com/watch?v=Jh4v2Qe-yz4&list=PLQH0vQCPtkkh1mT8I1eMEnFPIOeJk5Lb_'},
-      {l:'Devlog (English)',u:'https://www.youtube.com/watch?v=VPEZZjM8M0Q&list=PLYeep8TZnQu86nzKGuo64CK-KCZwzvBau'}
-    ]
-  },
-  {
-    id:4,f:'multi',cat:'Multiplayer · Deterministic',pc:'p-multi',
-    title:'Asteroids — Photon Quantum',
-    img:'img/portfolio/Asteroids.png',
-    tech:'Unity · Photon Quantum',
-    desc:'Classic Asteroids reimagined as multiplayer using Photon Quantum\'s deterministic lockstep simulation. No lag compensation required — physics perfectly synchronized across all clients.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/quantum-asteroids'}
-    ]
-  },
-  {
-    id:5,f:'multi',cat:'Multiplayer · Racing',pc:'p-multi',
-    title:'Racing — Photon Fusion',
-    img:'img/portfolio/Racing_Game.png',
-    tech:'Unity · Photon Fusion',
-    desc:'Online multiplayer racing using Photon Fusion. Demonstrates client-side prediction and server reconciliation for smooth, responsive racing feel over real network conditions.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Velocity-Surge-Racing'}
-    ]
-  },
-  {
-    id:6,f:'cpp',cat:'C++ · Low-Level',pc:'p-cpp',
-    title:'Pixel Highway',
-    img:'img/portfolio/PixelHighway.png',
-    tech:'C++ · Raylib',
-    desc:'Endless runner in pure C++ with Raylib — built to study rendering loops, object pooling, and collision without engine abstraction. One crash, it\'s game over.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Pixel-Highway'},
-      {l:'Play on Itch.io',u:'https://abdullah026.itch.io/pixel-highway'}
-    ]
-  },
-  {
-    id:7,f:'vr',cat:'AR · Mobile',pc:'p-vr',
-    title:'AR PACMAN',
-    img:'img/portfolio/AR-PACMAN.png',
-    tech:'Unity · AR Foundation',
-    desc:'Pac-Man in augmented reality using Unity AR Foundation. Full maze spawns on any real-world flat surface — plane detection, occlusion, and classic Pac-Man AI all working in AR.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/AR_PACMAN'}
-    ]
-  },
-  {
-    id:8,f:'pc',cat:'PC · Racing',pc:'p-pc',
-    title:'Velocity Surge',
-    img:'img/portfolio/Crazy_Fast.png',
-    tech:'Unity · Blender',
-    desc:'Adrenaline-fueled single-player racing — the architecture foundation for the Photon Fusion multiplayer variant. Custom vehicle physics, camera rig, and modular track system.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Velocity-Surge'}
-    ]
-  },
-  {
-    id:9,f:'pc',cat:'PC · Patterns',pc:'p-pc',
-    title:'Brick Breaker',
-    img:'img/portfolio/Bricke Breaker.png',
-    tech:'Unity · C#',
-    desc:'Classic Brick Breaker as an Observer Pattern study — fully decoupled event-driven architecture. Ball, paddle, bricks, score, and UI communicate exclusively through events.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Brick-Breaker'}
-    ]
-  },
-  {
-    id:10,f:'pc',cat:'Mobile · Architecture',pc:'p-pc',
-    title:'Fruit Ninja',
-    img:'img/portfolio/Fruit Ninja.png',
-    tech:'Unity · C# · Photoshop',
-    desc:'Fruit Ninja clone demonstrating Interface-based architecture. All game objects communicate exclusively through events and interfaces — zero direct component coupling.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Fruit-Ninja'}
-    ]
-  },
-  {
-    id:11,f:'pc',cat:'Mobile · Gameplay',pc:'p-pc',
-    title:'Serpent Day',
-    img:'img/portfolio/Serpent Day.png',
-    tech:'Unity · C#',
-    desc:'Snake-platformer hybrid where Mr. Snake jumps to clear bugs and rotten leaves. Focused on tight game feel, responsive controls, and satisfying physics response.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Serpent-Day'}
-    ]
-  },
-  {
-    id:12,f:'pc',cat:'PC · Story',pc:'p-pc',
-    title:'Dragons',
-    img:'img/portfolio/Dragons.jpg',
-    tech:'Unity · C#',
-    desc:'A small blue dragon on a mission to eliminate evil dragons — combat system, health management, scene-based progression, and a simple UI flow.',
-    links:[
-      {l:'GitHub',u:'https://github.com/Abdullah165/Dragons'},
-      {l:'Play on Simmer.io',u:'https://simmer.io/@AbdullahD/dragon'}
-    ]
-  }
-];
+ <div class="bg-circles">
+	 <div class="circle-1"></div>
+	 <div class="circle-2"></div>
+	 <div class="circle-3"></div>
+	 <div class="circle-4"></div>
+	</div>
 
-function renderGrid(filter='all'){
-  const data = filter==='all' ? projects : projects.filter(p=>p.f===filter);
-  document.getElementById('countLbl').textContent = data.length+' Project'+(data.length!==1?'s':'');
-  document.getElementById('grid').innerHTML = data.map(p=>`
-    <div class="card" onclick="openM(${p.id})">
-      <div class="card-img-box">
-        <img class="card-img" src="${p.img}" alt="${p.title}" loading="lazy"
-          onerror="this.parentElement.style.minHeight='160px'">
-        <span class="cat-pill ${p.pc}">${p.cat}</span>
-        <div class="card-ov">
-          <div class="ov-title">${p.title}</div>
-          <div class="ov-desc">${p.desc}</div>
-          <div class="ov-links">
-            ${p.links.map(l=>`<a class="ov-link" href="${l.u}" target="_blank" onclick="event.stopPropagation()">↗ ${l.l}</a>`).join('')}
-          </div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div>
-          <div class="card-name">${p.title}</div>
-          <div class="card-sub">${p.tech}</div>
-        </div>
-        <div class="card-arr">→</div>
-      </div>
-    </div>
-  `).join('');
-}
-renderGrid();
+<div class="main hidden">
+    
+      <header class="header">
+		  <div class="container">
+			  <div class="row flex-end">
+				  <button type="button" class="nav-toggler">
+					  <span></span>
+				  </button>
+				  <div class="nav">
+					  <div class="nav-inner">
+						  <ul>
+							  <li><a href="#about" class="nav-item link-item">about</a></li>
+							  <li><a href="#portfolio" class="nav-item link-item">portfolio</a></li>
+						  </ul>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </header>
+	  
+      <section class="about-section sec-padding" id="about">
+		  <div class="container">
+			  <div class="row">
+				<div class="section-title">
+					<h1>Hello, I'm</h1>
+     				<h1>Abdullah</h1>
+     				<h2>Unity Game Developer</h2>
+				</div>  
+			   </div>
+			   <div class="row">
+                 <div class="about-img">
+					 <div class="img-box">
+						 <img src="img/About image.png" alt="about img">
+					 </div>
+				 </div>
+				 <div class="about-text">
+					 <p>
+						Result-oriented Unity Gameplay Programmer with 3+ years of specialized experience in gameplay 
+architecture, multiplayer networking (Photon Quantum), and VR/ AR development. Deeply focused on 
+performance optimization and low-level engine mechanics, leveraging tools like the Unity Profiler, DOTS, and 
+enjoy developing personal projects in C++ with Raylib to explore low-level engine concepts.
+Proven track record of shipping high-quality mobile and multiplayer titles. Passionate about clean code 
+architecture, I actively write technical blogs on topics such as Dependency Injection (Reflex Framework) to 
+share knowledge with the developer community.
+					 </p>
+					 <h3>skills</h3>
+					 <div class="skills">
+						<div class="skill-item">Unity Engine</div>
+						<div class="skill-item">Photon Quantum</div>
+						<div class="skill-item">VR/ AR, XR Interaction Toolkit</div>
+						<div class="skill-item">Dependency Injection (Reflex), MVC/ MVP, Observer Pattern</div>
+						<div class="skill-item">Problem Solving</div>
+						<div class="skill-item">Git, CI/ CD Pipelines</div>
+						<div class="skill-item">Strong Communication Skills</div>
+						<div class="skill-item">C#</div>
+						<div class="skill-item">C++</div>
+						<div class="skill-item">OOP</div>
+					 </div>
 
-document.getElementById('filterRow').addEventListener('click',e=>{
-  const btn=e.target.closest('.f-btn');
-  if(!btn)return;
-  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGrid(btn.dataset.f);
-});
+					 <div class="about-tabs">
+						 <button type="button" class="tab-item active" data-target="#education">education</button>
+					 </div>
 
-function openM(id){
-  const p=projects.find(x=>x.id===id);
-  if(!p)return;
-  document.getElementById('mImg').src=p.img;
-  document.getElementById('mImg').alt=p.title;
-  document.getElementById('mCats').innerHTML=
-    `<span class="modal-badge primary">${p.cat}</span><span class="modal-badge">${p.tech}</span>`;
-  document.getElementById('mTitle').textContent=p.title;
-  document.getElementById('mDesc').textContent=p.desc;
-  document.getElementById('mMeta').innerHTML=p.links.map(l=>
-    `<div class="meta-row">
-      <span class="meta-k">Link</span>
-      <a class="meta-lnk" href="${l.u}" target="_blank">${l.l}</a>
-    </div>`
-  ).join('');
-  document.getElementById('modalBg').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeM(){
-  document.getElementById('modalBg').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('modalX').onclick=closeM;
-document.getElementById('modalBg').addEventListener('click',e=>{if(e.target.id==='modalBg')closeM();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
+					   <div class="tab-content active" id="education">
+						   <div class="timeline">
+							   <div class="timeline-item">
+								<span class="date">2017 - 2021</span>
+								<h4>bachelor of software engineering - <span>Assuit university</span></h4>
+								<p>GPA: 2.75 (B-)</p>
+							</div>
+						   </div>
+					   </div>
 
-/* THEME */
-const html=document.documentElement;
-const tbtn=document.getElementById('themeBtn');
-const saved=localStorage.getItem('theme')||'light';
-applyTheme(saved);
-function applyTheme(t){
-  html.setAttribute('data-theme',t);
-  tbtn.textContent=t==='dark'?'☀️':'🌙';
-  localStorage.setItem('theme',t);
-}
-tbtn.addEventListener('click',()=>{
-  applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark');
-});
+					 <a href="Abdullah_Abdelati_Unity_Game_Developer.pdf" target="_blank" class="btn">download cv</a>
+				 </div>
+			   </div>
+		  </div>
+	  </section>
+       
+       <section class="portfolio-section sec-padding" id="portfolio">
+		   <div class="container">
+			   <div class="row">
+				   <div class="section-title">
+					   <h2>recent work</h2>
+				   </div>
+			   </div>
+			   <div class="row">
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/VR Antomy.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">VR Anatomy Lab</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>An interactive VR educational application exploring human anatomy, built with Unity and the XR Interaction Toolkit.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity, Unity XR Interaction Toolkit (XRI)</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/VR-Anatomy-Lab" target="_blank">▶ View Code</a></span></li>
+								<li>Sample video -> <span><a href="https://drive.google.com/file/d/1DYBAZR3VQtKtrh_n5LHxdZUKWXnlY33g/view?usp=sharing" target="_blank">▶ Watch Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-/* LOADER */
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    const l=document.getElementById('loader');
-    l.classList.add('done');
-    setTimeout(()=>l.remove(),500);
-  },1000);
-});
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/ScaryTeleportationVR.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Scary Teleportation (VR)</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>An immersive VR experience featuring custom teleportation mechanics and physics-based interactions developed in Unity.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity, UnityXR, C#</span></li>
+								<li>Showcase -> <span><a href="https://www.linkedin.com/feed/update/urn:li:activity:7423027637339705344/?originTrackingId=UKWnqdd%2FApD0UnDhB1DSKw%3D%3D" target="_blank">▶ Watch Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>     
 
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.opacity='1';
-      e.target.style.transform='translateY(0)';
-      obs.unobserve(e.target);
-    }
-  });
-},{threshold:.08});
-setTimeout(()=>{
-  document.querySelectorAll('.card,.profile-card,.iblock,.stat-strip').forEach(el=>{
-    el.style.transition='opacity .5s ease,transform .5s ease';
-    el.style.opacity='0';
-    el.style.transform='translateY(16px)';
-    obs.observe(el);
-  });
-},1100);
+			    <div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Upper Egypt Derby Thumbnail4.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Upper Egypt Derby</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Horse racing but in the South Egyptian style 🐎</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Still Under development, You can follow my Devlogs here 👇👇</li>
+								<li>YouTube (Arabic) -> <span><a href="https://www.youtube.com/watch?v=Jh4v2Qe-yz4&list=PLQH0vQCPtkkh1mT8I1eMEnFPIOeJk5Lb_&pp=gAQBiAQB" target="_blank">▶ Watch Here</a></span></li>
+								<li>YouTube (English) -> <span><a href="https://www.youtube.com/watch?v=VPEZZjM8M0Q&list=PLYeep8TZnQu86nzKGuo64CK-KCZwzvBau&pp=gAQBiAQB" target="_blank">▶ Watch Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				   
+                <div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/PixelHighway.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Pixel Highway (C++ with Raylib)</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Survive as long as you can to set a new high score. One crash, and it's game over!</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Pixel-Highway" target="_blank">▶ View Code</a></span></li>
+								<li>Itch.io -> <span><a href="https://abdullah026.itch.io/pixel-highway" target="_blank">▶ Play Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+					<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Crazy_Fast.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Velocity Surge (Racing game)</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Experience heart-pounding speed and adrenaline-fueled competition in the ultimate racing car game 🏎️🛞</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity, Blender</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Velocity-Surge" target="_blank">▶ View Code</a></span></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				   
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Asteroids.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Asteroids (Photon Quantum)</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple Asteroids game using Photon Quantum</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity, Photon Quantum</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/quantum-asteroids" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				   
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Racing_Game.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Racing Game (Photon Fusion)</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple multiplayer racing game using Photon Fusion</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity, Photon Fusion</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Velocity-Surge-Racing" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>     
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/AR-PACMAN.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">AR PACMAN</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple AR game using Unity</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used - <span>Unity</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/AR_PACMAN" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>     
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Serpent Day.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Serpent Day</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Let Mr.Snake jump up and get rid of the bugs and rotten leaves.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity Engine</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Serpent-Day" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Hyper Casual game.jpg" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Saving and Fatal Steps</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Jump here and there and make sure you watch your steps. Decoupled using Interfaces and Event System.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity Engine</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/The-saving-and-fatal-steps" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Bricke Breaker.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Brick Breaker</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple Brick Breaker game implementing the Observer Pattern.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity Engine</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Brick-Breaker" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Fruit Ninja.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Fruit Ninja</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Fruit Ninja in Unity. Used Event system and Interfaces for clean architecture.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity, Photoshop</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Fruit-Ninja" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Ping Pong.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Ping Pong</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Pong game in Unity with Observer Pattern implementation.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity, Photoshop</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Pong" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Flippy bird.jpg" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Flippy Bird</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Unity event system for decoupling and PlayerPrefs for settings.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity, Photoshop</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Flappy-Bird" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Astrides.png" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Asteroids</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple Asteroids game implementing Object Pooling Pattern.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity, Photoshop</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Asteroids" target="_blank">▶ View Code</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Hit and Run game.jpg" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Hit and Run</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>A platform game involving a Wight Knight sent to clear enemies.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>C#</span></li>
+								<li>Download -> <span><a href="https://abdullah-abdelaty.itch.io/hit-and-run-game" target="_blank">▶ Play Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/The Escape.jpg" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">The Escape</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>A story-driven revenge game featuring a blue knight.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity Engine, C#</span></li>
+								<li>Play it -> <span><a href="https://simmer.io/@AbdullahD/the-revenge" target="_blank">▶ Play Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="portfolio-item-thumbnail">
+						<img src="img/portfolio/Dragons.jpg" alt="portfolio item thumbnail">
+					</div>
+					<h3 class="portfolio-item-title">Dragons</h3>
+					<button type="button" class="btn view-project-btn">view project</button>
+					<div class="portfolio-item-details">
+						<div class="description">
+							<p>Simple game with a little blue dragon killing evil dragons.</p>
+						</div>
+						<div class="general-info">
+							<ul>
+								<li>Technologies Used -> <span>Unity Engine, C#</span></li>
+								<li>GitHub -> <span><a href="https://github.com/Abdullah165/Dragons" target="_blank">▶ View Code</a></span></li>
+								<li>Play it -> <span><a href="https://simmer.io/@AbdullahD/dragon" target="_blank">▶ Play Here</a></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		   </div>
+		</section>
+
+</div>
+
+<div class="portfolio-popup">
+	 <div class="pp-inner">
+		  <div class="pp-content">
+			  <div class="pp-header">
+				  <button type="button" class="btn pp-close"><i class="fas fa-times"></i></button>
+				  <div class="pp-thumbnail">
+					  <img src="img/portfolio/Hit and Run game.jpg" alt="pp-thumbnail">
+				  </div>
+				  <h3>game landing page</h3>
+			  </div>
+			  <div class="pp-body">
+				<div class="description">
+					<p>?.</p>
+				</div>
+				<div class="general-info">
+					<ul>
+						<li>Created - <span>17 Oct 2020</span></li>
+						<li>Technologies Used - <span>Unity Engine, C#</span></li>
+						<li>Role - <span>Game developer</span></li>
+						<li>Download -> <span><a href="https://abdullah-abdelaty.itch.io/hit-and-run-game" target="_blank">▶ Download Here</a></span></li>
+					</ul>
+				</div>
+			  </div>
+		  </div>
+	 </div>
+</div>
+  
+<script src="js/script.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous">
 </script>
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 
-</body></html>
+</body>
+</html>
